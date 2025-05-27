@@ -10,7 +10,7 @@
         WindowStyle="ThreeDBorderWindow"
         MinHeight="200" MinWidth="270"
         Width="1505" Height="800"
-        WindowState="Maximized" Icon="C:\Users\fona\source\repos\CourseWorkClient\McDonald's_logo.png">
+        WindowState="Maximized" Icon="C:\Users\fona\source\repos\ksis\CourseWorkClient\McDonald's_logo.png">
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <Grid Width="1505" Height="784">
             <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Margin="742,708,0,0" Height="48" Visibility="Collapsed" Style="{StaticResource TypeInTextBox}"
@@ -29,7 +29,7 @@
                     FontSize="20" Visibility="Visible" BorderBrush="Black" BorderThickness="1"/>
             <Button x:Name="BackButton" Style="{StaticResource DefaultButton}" Margin="10,10,1420,712" Visibility="Collapsed" Click="BackButton_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="C:\Users\fona\source\repos\CourseWorkClient\Media\back.png" />
+                    <ImageBrush ImageSource="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\back.png" />
                 </Button.Background>
             </Button>
             <Border x:Name="MainMenu" Padding="5" HorizontalAlignment="Center" CornerRadius="30"

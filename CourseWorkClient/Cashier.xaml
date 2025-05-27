@@ -9,7 +9,7 @@
         Title="Веб-сервис кафе «Макдональдс»" WindowStyle="ThreeDBorderWindow"
         MinHeight="200" MinWidth="270"
         Width="1505" Height="2144"
-        WindowState="Maximized" Icon="C:\Users\fona\source\repos\CourseWorkClient\McDonald's_logo.png">
+        WindowState="Maximized" Icon="C:\Users\fona\source\repos\ksis\CourseWorkClient\McDonald's_logo.png">
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <Border>
             <StackPanel>

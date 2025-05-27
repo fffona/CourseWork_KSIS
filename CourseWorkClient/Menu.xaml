@@ -10,7 +10,7 @@
         WindowStyle="ThreeDBorderWindow"
         MinHeight="200" MinWidth="270"
         Width="1505" Height="1800"
-        WindowState="Maximized" Icon="C:\Users\fona\source\repos\CourseWorkClient\McDonald's_logo.png">
+        WindowState="Maximized" Icon="C:\Users\fona\source\repos\ksis\CourseWorkClient\McDonald's_logo.png">
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <Grid Width="1505" Height="1503">
             <Border Background="#FFFAFA" Height="136" VerticalAlignment="Top" Margin="-28,-36,-30,0">
@@ -18,7 +18,7 @@
                     <DropShadowEffect BlurRadius="15" Opacity="0.15" ShadowDepth="1"/>
                 </Border.Effect>
                 <StackPanel>
-                    <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\Golden Arches.png" Width="133" Margin="0,47,1330,0" Height="73"/>
+                    <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\Golden Arches.png" Width="133" Margin="0,47,1330,0" Height="73"/>
                     <Button Content="Меню" FontSize="35" FontFamily="Faberge" Width="98" 
                                Margin="0,-60,1000,0" Height="50" FontWeight="Bold"
                             Style="{StaticResource DefaultButton}" Click="Button_Menu_Click"/>
@@ -47,7 +47,7 @@ Margin="0,-60,-680,0" Height="50" FontWeight="Regular" Foreground="#424242"
                     <StackPanel Margin="0,-63,0,-820">
                         <Border Height="110">
                             <Grid>
-                                <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\avzd0x7ig4kymzpgxjpsh6wf90utogjl.png" HorizontalAlignment="Left" Margin="12,12,0,13" Width="137"/>
+                                <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\avzd0x7ig4kymzpgxjpsh6wf90utogjl.png" HorizontalAlignment="Left" Margin="12,12,0,13" Width="137"/>
                                 <TextBlock Text="Бургеры и Роллы" FontSize="25" FontFamily="Faberge" Margin="175,41,26,37"/>
                                 <Rectangle x:Name="rect1" Fill="Firebrick" Width="15" HorizontalAlignment="Right"/>
                                 <Button Height="110" Background="Transparent" BorderThickness="0" Foreground="Transparent"
@@ -56,7 +56,7 @@ Margin="0,-60,-680,0" Height="50" FontWeight="Regular" Foreground="#424242"
                         </Border>
                         <Border Height="110">
                             <Grid>
-                                <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\chicken.png" HorizontalAlignment="Left" Margin="10,-16,0,-9" Width="144"/>
+                                <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\chicken.png" HorizontalAlignment="Left" Margin="10,-16,0,-9" Width="144"/>
                                 <TextBlock Text="Курочка" FontSize="25" FontFamily="Faberge" Margin="224,41,73,37"/>
                                 <Rectangle x:Name="rect2" Fill="Firebrick" Width="15" HorizontalAlignment="Right" Visibility="Hidden"/>
                                 <Button Height="110" Background="Transparent" BorderThickness="0" Foreground="Transparent"
@@ -65,7 +65,7 @@ Margin="0,-60,-680,0" Height="50" FontWeight="Regular" Foreground="#424242"
                         </Border>
                         <Border Height="110">
                             <Grid>
-                                <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\fries.png" HorizontalAlignment="Left" Margin="28,5,0,5" Width="100"/>
+                                <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\fries.png" HorizontalAlignment="Left" Margin="28,5,0,5" Width="100"/>
                                 <TextBlock Text="Картошка" FontSize="25" FontFamily="Faberge" Margin="209,41,55,37"/>
                                 <Rectangle x:Name="rect3" Fill="Firebrick" Width="15" HorizontalAlignment="Right" Visibility="Hidden"/>
                                 <Button Height="110" Background="Transparent" BorderThickness="0" Foreground="Transparent"
@@ -74,7 +74,7 @@ Margin="0,-60,-680,0" Height="50" FontWeight="Regular" Foreground="#424242"
                         </Border>
                         <Border Height="110">
                             <Grid>
-                                <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\rodnoy-vkus.png" HorizontalAlignment="Left" Margin="32,5,0,5" Width="100"/>
+                                <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\rodnoy-vkus.png" HorizontalAlignment="Left" Margin="32,5,0,5" Width="100"/>
                                 <TextBlock Text="Родной вкус" FontSize="25" FontFamily="Faberge" Margin="197,41,55,37"/>
                                 <Rectangle x:Name="rect4" Fill="Firebrick" Width="15" HorizontalAlignment="Right" Visibility="Hidden"/>
                                 <Button Height="110" Background="Transparent" BorderThickness="0" Foreground="Transparent"
@@ -83,7 +83,7 @@ Margin="0,-60,-680,0" Height="50" FontWeight="Regular" Foreground="#424242"
                         </Border>
                         <Border Height="110">
                             <Grid>
-                                <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\breakfast.png" HorizontalAlignment="Left" Margin="17,8,0,7" Width="178"/>
+                                <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\breakfast.png" HorizontalAlignment="Left" Margin="17,8,0,7" Width="178"/>
                                 <TextBlock Text="Завтрак до 10:00" FontSize="25" FontFamily="Faberge" Margin="178,41,20,37"/>
                                 <Rectangle x:Name="rect5" Fill="Firebrick" Width="15" HorizontalAlignment="Right" Visibility="Hidden"/>
                                 <Button Height="110" Background="Transparent" BorderThickness="0" Foreground="Transparent"
@@ -92,7 +92,7 @@ Margin="0,-60,-680,0" Height="50" FontWeight="Regular" Foreground="#424242"
                         </Border>
                         <Border Height="110">
                             <Grid>
-                                <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\drinks.png" HorizontalAlignment="Left" Margin="28,5,0,5" Width="100"/>
+                                <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\drinks.png" HorizontalAlignment="Left" Margin="28,5,0,5" Width="100"/>
                                 <TextBlock Text="Напитки" FontSize="25" FontFamily="Faberge" Margin="214,41,77,37"/>
                                 <Rectangle x:Name="rect6" Fill="Firebrick" Width="15" HorizontalAlignment="Right" Visibility="Hidden"/>
                                 <Button Height="110" Background="Transparent" BorderThickness="0" Foreground="Transparent"
@@ -101,7 +101,7 @@ Margin="0,-60,-680,0" Height="50" FontWeight="Regular" Foreground="#424242"
                         </Border>
                         <Border Height="110">
                             <Grid>
-                                <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\desert.png" HorizontalAlignment="Left" Margin="23,0,0,5" Width="161"/>
+                                <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\desert.png" HorizontalAlignment="Left" Margin="23,0,0,5" Width="161"/>
                                 <TextBlock Text="Десерты" FontSize="25" FontFamily="Faberge" Margin="214,41,74,37"/>
                                 <Rectangle x:Name="rect7" Fill="Firebrick" Width="15" HorizontalAlignment="Right" Visibility="Hidden"/>
                                 <Button Height="110" Background="Transparent" BorderThickness="0" Foreground="Transparent"
@@ -110,7 +110,7 @@ Margin="0,-60,-680,0" Height="50" FontWeight="Regular" Foreground="#424242"
                         </Border>
                         <Border Height="110">
                             <Grid>
-                                <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\kidsmeal.png" HorizontalAlignment="Left" Margin="36,10,0,10" Width="81"/>
+                                <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\kidsmeal.png" HorizontalAlignment="Left" Margin="36,10,0,10" Width="81"/>
                                 <TextBlock Text="Кидс Мил" FontSize="25" FontFamily="Faberge" Margin="209,41,70,37"/>
                                 <Rectangle x:Name="rect8" Fill="Firebrick" Width="15" HorizontalAlignment="Right" Visibility="Hidden"/>
                                 <Button Height="110" Background="Transparent" BorderThickness="0" Foreground="Transparent"
@@ -119,7 +119,7 @@ Margin="0,-60,-680,0" Height="50" FontWeight="Regular" Foreground="#424242"
                         </Border>
                         <Border Height="110">
                             <Grid>
-                                <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\sets.png" HorizontalAlignment="Left" Margin="3,-4,0,0" Width="162"/>
+                                <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\sets.png" HorizontalAlignment="Left" Margin="3,-4,0,0" Width="162"/>
                                 <TextBlock Text="Сеты" FontSize="25" FontFamily="Faberge" Margin="230,41,101,37"/>
                                 <Rectangle x:Name="rect9" Fill="Firebrick" Width="15" HorizontalAlignment="Right" Visibility="Hidden"/>
                                 <Button Height="110" Background="Transparent" BorderThickness="0" Foreground="Transparent"

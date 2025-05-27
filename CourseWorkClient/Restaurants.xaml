@@ -10,7 +10,7 @@
         WindowStyle="ThreeDBorderWindow"
         MinHeight="200" MinWidth="270"
         Width="1505" Height="800"
-        WindowState="Maximized" Icon="C:\Users\fona\source\repos\CourseWorkClient\McDonald's_logo.png">
+        WindowState="Maximized" Icon="C:\Users\fona\source\repos\ksis\CourseWorkClient\McDonald's_logo.png">
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <Grid Width="1505" Height="784">
             <Border Background="#FFFAFA" Height="136" VerticalAlignment="Top" Margin="-28,-36,-30,0">
@@ -18,7 +18,7 @@
                     <DropShadowEffect BlurRadius="15" Opacity="0.15" ShadowDepth="1"/>
                 </Border.Effect>
                 <StackPanel>
-                    <Image Source="C:\Users\fona\source\repos\CourseWorkClient\Media\Golden Arches.png" Width="133" Margin="0,47,1330,0" Height="73"/>
+                    <Image Source="C:\Users\fona\source\repos\ksis\CourseWorkClient\Media\Golden Arches.png" Width="133" Margin="0,47,1330,0" Height="73"/>
                     <Button Content="Меню" FontSize="35" FontFamily="Faberge" Width="98" 
            Margin="0,-60,1000,0" Height="50" FontWeight="Regular" Foreground="#424242"
         Style="{StaticResource DefaultButton}" Click="Button_Menu_Click"/>
