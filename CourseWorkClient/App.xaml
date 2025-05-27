@@ -1,0 +1,451 @@
+﻿<Application x:Class="CourseWorkClient.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CourseWorkClient"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             StartupUri="Menu.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Secondary/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="GroupBox" x:Key="DefaultGroupBox">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="HeaderTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" 
+                                   Background="Transparent" 
+                                   Foreground="Black" 
+                                   Padding="0" 
+                                   HorizontalAlignment="Left"/>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="TypeInTextBox" TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+                <Setter Property="local:TextBoxHelper.IsErrorState" Value="False" />
+                <Style.Triggers>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsKeyboardFocused" Value="True" />
+                            <Condition Property="local:TextBoxHelper.IsErrorState" Value="False" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="materialDesign:HintAssist.Foreground" Value="Black" />
+                        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="Black" />
+                    </MultiTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsKeyboardFocused" Value="False" />
+                            <Condition Property="local:TextBoxHelper.IsErrorState" Value="False" />
+                            <Condition Property="IsMouseOver" Value="True" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="#3d3d3d" />
+                        <Setter Property="materialDesign:HintAssist.Foreground" Value="#7F000000" />
+                    </MultiTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsKeyboardFocused" Value="False" />
+                            <Condition Property="local:TextBoxHelper.IsErrorState" Value="True" />
+                            <Condition Property="IsMouseOver" Value="True" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="#bd4040" />
+                        <Setter Property="materialDesign:HintAssist.Foreground" Value="#bd4040" />
+                    </MultiTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsKeyboardFocused" Value="True" />
+                            <Condition Property="local:TextBoxHelper.IsErrorState" Value="True" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="#C23030" />
+                        <Setter Property="materialDesign:HintAssist.Foreground" Value="#C23030" />
+                    </MultiTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsKeyboardFocused" Value="False" />
+                            <Condition Property="local:TextBoxHelper.IsErrorState" Value="True" />
+                            <Condition Property="IsMouseOver" Value="False" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="#bd4040" />
+                        <Setter Property="materialDesign:HintAssist.Foreground" Value="#bd4040" />
+                    </MultiTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="TypeInPasswordBox" TargetType="PasswordBox" BasedOn="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                <Setter Property="local:PasswordBoxHelper.IsErrorState" Value="False" />
+                <Style.Triggers>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsKeyboardFocused" Value="True" />
+                            <Condition Property="local:PasswordBoxHelper.IsErrorState" Value="False" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="materialDesign:HintAssist.Foreground" Value="Black" />
+                        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="Black" />
+                    </MultiTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsKeyboardFocused" Value="False" />
+                            <Condition Property="local:PasswordBoxHelper.IsErrorState" Value="False" />
+                            <Condition Property="IsMouseOver" Value="True" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="#3d3d3d" />
+                        <Setter Property="materialDesign:HintAssist.Foreground" Value="#7F000000" />
+                    </MultiTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsKeyboardFocused" Value="False" />
+                            <Condition Property="local:PasswordBoxHelper.IsErrorState" Value="True" />
+                            <Condition Property="IsMouseOver" Value="True" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="#bd4040" />
+                        <Setter Property="materialDesign:HintAssist.Foreground" Value="#bd4040" />
+                    </MultiTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsKeyboardFocused" Value="True" />
+                            <Condition Property="local:PasswordBoxHelper.IsErrorState" Value="True" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="#C23030" />
+                        <Setter Property="materialDesign:HintAssist.Foreground" Value="#C23030" />
+                    </MultiTrigger>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsKeyboardFocused" Value="False" />
+                            <Condition Property="local:PasswordBoxHelper.IsErrorState" Value="True" />
+                            <Condition Property="IsMouseOver" Value="False" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="#bd4040" />
+                        <Setter Property="materialDesign:HintAssist.Foreground" Value="#bd4040" />
+                    </MultiTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="RadioButton" x:Key="DefaultRadioButton">
+                <Setter Property="Foreground" Value="Transparent"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <ControlTemplate.Resources>
+                                <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                            </ControlTemplate.Resources>
+                            <StackPanel Orientation="Horizontal">
+                                <Grid Width="20" Height="20">
+                                    <Ellipse x:Name="Ellipse" Width="13" Height="13" Stroke="#fad12f" StrokeThickness="1.5">
+                                        <Ellipse.Fill>
+                                            <SolidColorBrush Color="Transparent"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <Ellipse Width="6.5" Height="6.5" Fill="#fad12f" Visibility="{TemplateBinding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                </Grid>
+                                <TextBlock Text="{TemplateBinding Content}" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="RedButton" TargetType="Button">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="DarkGray" BlurRadius="4" ShadowDepth="2" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border x:Name="border"
+                CornerRadius="2" Background="{TemplateBinding Background}"
+                BorderThickness="0" BorderBrush="Transparent">
+                                    <ContentPresenter Content="{TemplateBinding Content}"
+                              HorizontalAlignment="Center" VerticalAlignment="Center"
+                              Focusable="False" />
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="border"
+                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                        To="#781717"
+                                        Duration="0:0:0.0000001" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="border"
+                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                        To="Firebrick"
+                                        Duration="0:0:0.15" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="GrayButton" TargetType="Button">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="DarkGray" BlurRadius="4" ShadowDepth="2" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border x:Name="border"
+    CornerRadius="3" Background="{TemplateBinding Background}"
+    BorderThickness="0" BorderBrush="Transparent">
+                                    <ContentPresenter Content="{TemplateBinding Content}"
+                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                  Focusable="False" />
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="border"
+                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                            To="#8f8f8f"
+                            Duration="0:0:0.0000001" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="border"
+                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                            To="#c2c2c2"
+                            Duration="0:0:0.15" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="YellowButton" TargetType="Button">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="DarkGray" BlurRadius="4" ShadowDepth="2" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border x:Name="border"
+    CornerRadius="2" Background="{TemplateBinding Background}"
+    BorderThickness="0" BorderBrush="Transparent">
+                                    <ContentPresenter Content="{TemplateBinding Content}"
+                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                  Focusable="False" />
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="border"
+                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                            To="#ad9126"
+                            Duration="0:0:0.0000001" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="border"
+                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                            To="#f7ce36"
+                            Duration="0:0:0.15" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="GreenButton" TargetType="Button">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="DarkGray" BlurRadius="4" ShadowDepth="2" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border x:Name="border"
+CornerRadius="2" Background="{TemplateBinding Background}"
+BorderThickness="0" BorderBrush="Transparent">
+                                    <ContentPresenter Content="{TemplateBinding Content}"
+              HorizontalAlignment="Center" VerticalAlignment="Center"
+              Focusable="False" />
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="border"
+                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                        To="#224d05"
+                        Duration="0:0:0.0000001" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="border"
+                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                        To="#40910a"
+                        Duration="0:0:0.15" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="AmountChoice" TargetType="RadioButton">
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="FontFamily" Value="Faberge" />
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Border x:Name="border" Background="{TemplateBinding Background}" 
+                        CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#f7ce36"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="border"
+Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+To="#ad9126"
+Duration="0:0:0.0000001" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetName="border"
+Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+To="#f7ce36"
+Duration="0:0:0.15" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="DefaultButton" TargetType="Button" BasedOn="{StaticResource RedButton}">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                <Setter Property="Effect" Value="{x:Null}" />
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter Content="{TemplateBinding Content}" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style
+                x:Key="AnimButton" TargetType="Button" BasedOn="{StaticResource DefaultButton}">
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Trigger.EnterActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)"
+         To="1.15" Duration="0:0:0.1"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleY)"
+         To="1.15" Duration="0:0:0.1"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.EnterActions>
+                        <Trigger.ExitActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)"
+         To="1" Duration="0:0:0.1"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleY)"
+         To="1" Duration="0:0:0.1"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.ExitActions>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
